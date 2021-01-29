@@ -1,0 +1,29 @@
+.inputsRow{
+    display: flex;
+    flex-direction: row;
+    width: 99%;
+}
+
+.textfields{
+    width: 48%;
+    margin: 1%;
+    text-align: center;
+}
+
+.textfield{
+    width: 96%;
+    margin: 1%;
+    text-align: center;
+}
+
+.buttons{
+
+    width: 99%;
+    float: right;
+}
+
+button{
+    float: right;
+    margin: 5px
+}
+

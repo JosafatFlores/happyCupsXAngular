@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div mat-dialog-content>
+        <div class="inputsRow">
+            <mat-form-field appearance="fill" class="textfields">
+                <mat-label>Minimo</mat-label>
+                <input matInput #minimum value="">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="textfields">
+                <mat-label>Gratis</mat-label>
+                <input matInput #free value="">
+            </mat-form-field>
+        </div>
+        <div class="inputsRow">
+            <mat-form-field appearance="fill" class="textfield">
+                <mat-label>Modelo</mat-label>
+                <mat-select #model>
+                    <mat-option *ngFor="let model of modelSelect" [value]="model.modelID">
+                        {{model.modelID}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+        
+    </div>
+    <div class="buttons">
+        <button type="button" class="btn btn-light" (click)="newOffer(model.value, minimum.value, free.value)">Aceptar</button>
+        <button type="button" class="btn btn-outline-danger" (click)="close()">Cancelar</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="headerpage">
+        <button mat-mini-fab color="green" (click)="newIncome()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    <table WIDTH=123 HEIGHT=55 textalign="right" mat-table [dataSource]="incomeDataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="ID">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let element">{{element.incomeID}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="modelo ID">
+            <th mat-header-cell *matHeaderCellDef>modelo ID</th>
+            <td mat-cell *matCellDef="let element">{{element.modelID}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Color">
+            <th mat-header-cell *matHeaderCellDef>Color</th>
+            <td mat-cell *matCellDef="let element">{{element.color}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Dimesiones">
+            <th mat-header-cell *matHeaderCellDef>Dimesiones</th>
+            <td mat-cell *matCellDef="let element">{{element.size}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Material">
+            <th mat-header-cell *matHeaderCellDef>Material</th>
+            <td mat-cell *matCellDef="let element">{{element.material}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Capacidad">
+            <th mat-header-cell *matHeaderCellDef>Capacidad</th>
+            <td mat-cell *matCellDef="let element">{{element.capacity}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Cantidad">
+            <th mat-header-cell *matHeaderCellDef>Cantidad</th>
+            <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Acciones">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let element">
+
+                <div class="botones">
+                    <button mat-mini-fab color="warn" (click)="deleteIncome(element)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsTable"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsTable;"></tr>
+    </table>
+</body>
+
+</html>

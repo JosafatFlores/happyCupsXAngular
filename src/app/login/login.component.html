@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+</head>
+
+<body>
+    <div class="login">
+        <div class="form">
+            <h2>Ingresa</h2>
+            <input type="text" placeholder="Usuario" name="usuario" #user value="" autocomplete="off">
+            <input type="password" placeholder="Contraseña" name="contraseña" #password value="">
+            <button class="btnLogin btn btn-outline-success" (click)="login(user.value, password.value)">
+                Aceptar
+            </button>
+            <button type="button" class="btn btn-link" (click)="newUser()">Registro</button>
+            <br>
+        </div>
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+.header{
+    width: 99%;
+    text-align: center;
+}
+
+.buttons{
+    
+    width: 99%;
+    float: right;
+}
+
+button{
+    float: right;
+    margin: 5px
+}

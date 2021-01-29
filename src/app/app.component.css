@@ -1,0 +1,83 @@
+img{
+    margin: auto;
+    display:block;
+    max-height: 50px;
+    width: auto;
+}
+
+.menu{
+    width: 100%;
+    align-items: center;
+    display: inline-block;    
+}
+
+.opcion{
+    width: 100%;
+}
+
+
+.mat-sidenav{
+    background-color: #26303D;
+    color: #ffffff;
+}
+
+
+.btn{
+    background-color: rgba(1, 1, 1, 0.0);
+    color: #ffffff;
+    border: none;
+}
+
+.btn:focus {
+	outline: none;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-sidenav-container { 
+	background: whitesmoke ;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+mat-sidenav, 
+mat-sidenav.mat-locked-open, 
+mat-sidenav.mat-closed.mat-locked-open-add-active {
+    min-width: 200px !important;
+    width: 75vw !important;
+    max-width: 400px !important;
+}
+
+
+
+  ::ng-deep .arrow > .mat-expansion-indicator:after {
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    img{
+        align-content: center;
+        max-width: 60px;
+        max-height: 40px;
+        
+    }
+
+    .dropdown-item, .btn{
+        font-size: 0.7em;
+    }
+}
+
+nav{
+    height: 50px;
+    vertical-align: center;
+}
+
+.seccion{
+    width: 95%;
+    text-align: left;
+    color: whitesmoke;
+}

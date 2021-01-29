@@ -1,0 +1,26 @@
+.header{
+    width: 99%;
+    text-align: center;
+}
+
+.inputsRow{
+    display: flex;
+    flex-direction: row;
+    width: 99%;
+}
+
+.textfield{
+    width: 96%;
+    margin: 1%;
+    text-align: center;
+}
+
+.buttons{
+    width: 99%;
+    float: right;
+}
+
+button{
+    float: right;
+    margin: 5px
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <mat-tab-group animationDuration="200ms" mat-align-tabs="start">
+        <mat-tab label="Categoria">
+            <div class="headerpage">
+                <button mat-mini-fab color="green" (click)="newElement('type')">
+                    <mat-icon>add</mat-icon>
+                </button>
+               
+            </div>
+            <table WIDTH=123 HEIGHT=55 textalign="right" mat-table [dataSource]="typeDataSource">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="ID">
+                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                    <td mat-cell *matCellDef="let element">{{element.typeID}}</td>
+                </ng-container>
+    
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Descripcion">
+                    <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                    <td mat-cell *matCellDef="let element">{{element.description}}</td>
+                </ng-container>
+    
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="Acciones">
+                    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                    <td mat-cell *matCellDef="let element">
+    
+                        <div class="botones">
+                            <button mat-mini-fab color="warn" (click)="deleteElement('type', element)" >
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="columnsTable"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnsTable;"></tr>
+            </table>
+        </mat-tab>
+        <mat-tab label="Color">
+            <div class="headerpage">
+                <button mat-mini-fab color="green" (click)="newElement('color')">
+                    <mat-icon>add</mat-icon>
+                </button>
+               
+            </div>
+            <table WIDTH=123 HEIGHT=55 textalign="right" mat-table [dataSource]="colorDataSource">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="ID">
+                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                    <td mat-cell *matCellDef="let element">{{element.colorID}}</td>
+                </ng-container>
+    
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Descripcion">
+                    <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                    <td mat-cell *matCellDef="let element">{{element.description}}</td>
+                </ng-container>
+    
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="Acciones">
+                    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                    <td mat-cell *matCellDef="let element">
+    
+                        <div class="botones">
+                            <button mat-mini-fab color="warn" (click)="deleteElement('color', element)" >
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="columnsTable"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnsTable;"></tr>
+            </table>
+        </mat-tab>
+        <mat-tab label="Dimesiones">
+            <div class="headerpage">
+                <button mat-mini-fab color="green" (click)="newElement('size')">
+                    <mat-icon>add</mat-icon>
+                </button>
+               
+            </div>
+            <table WIDTH=123 HEIGHT=55 textalign="right" mat-table [dataSource]="sizeDataSource">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="ID">
+                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                    <td mat-cell *matCellDef="let element">{{element.sizeID}}</td>
+                </ng-container>
+    
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Descripcion">
+                    <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                    <td mat-cell *matCellDef="let element">{{element.description}}</td>
+                </ng-container>
+    
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="Acciones">
+                    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                    <td mat-cell *matCellDef="let element">
+    
+                        <div class="botones">
+                            <button mat-mini-fab color="warn" (click)="deleteElement('size', element)" >
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="columnsTable"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnsTable;"></tr>
+            </table>
+        </mat-tab>
+        <mat-tab label="Material">
+            <div class="headerpage">
+                <button mat-mini-fab color="green" (click)="newElement('material')">
+                    <mat-icon>add</mat-icon>
+                </button>
+               
+            </div>
+            <table WIDTH=123 HEIGHT=55 textalign="right" mat-table [dataSource]="materialDataSource">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="ID">
+                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                    <td mat-cell *matCellDef="let element">{{element.materialID}}</td>
+                </ng-container>
+    
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Descripcion">
+                    <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                    <td mat-cell *matCellDef="let element">{{element.description}}</td>
+                </ng-container>
+    
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="Acciones">
+                    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                    <td mat-cell *matCellDef="let element">
+    
+                        <div class="botones">
+                            <button mat-mini-fab color="warn" (click)="deleteElement('material', element)" >
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="columnsTable"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnsTable;"></tr>
+            </table>
+        </mat-tab>
+        <mat-tab label="Capacidad">
+            <div class="headerpage">
+                <button mat-mini-fab color="green" (click)="newElement('capacity')">
+                    <mat-icon>add</mat-icon>
+                </button>
+               
+            </div>
+            <table WIDTH=123 HEIGHT=55 textalign="right" mat-table [dataSource]="capacityDataSource">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="ID">
+                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                    <td mat-cell *matCellDef="let element">{{element.capacityID}}</td>
+                </ng-container>
+    
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Descripcion">
+                    <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                    <td mat-cell *matCellDef="let element">{{element.description}}</td>
+                </ng-container>
+    
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="Acciones">
+                    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div class="botones">
+                            <button mat-mini-fab color="warn" (click)="deleteElement('capacity', element)" >
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="columnsTable"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnsTable;"></tr>
+            </table>
+        </mat-tab>
+    </mat-tab-group>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<div class="headerpage">
+    <button mat-mini-fab color="green" (click)="newOffer()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+<table WIDTH=123 HEIGHT=55 textalign="right" mat-table [dataSource]="offerDataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="ID">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element">{{element.offerID}}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Modelo ID">
+        <th mat-header-cell *matHeaderCellDef>Modelo ID</th>
+        <td mat-cell *matCellDef="let element">{{element.modelID}}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Piezas minimas">
+        <th mat-header-cell *matHeaderCellDef>Piezas minimas</th>
+        <td mat-cell *matCellDef="let element">{{element.minimum}}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Piezas gratis">
+        <th mat-header-cell *matHeaderCellDef>Piezas gratis</th>
+        <td mat-cell *matCellDef="let element">{{element.free}}</td>
+    </ng-container>
+
+   
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+
+            <div class="botones">
+                <button mat-mini-fab color="warn" (click)="deleteOffer(element)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnsTable"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsTable;"></tr>
+</table>

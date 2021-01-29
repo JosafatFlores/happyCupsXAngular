@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div mat-dialog-content>
+        <div class="inputsRow">
+            <mat-form-field appearance="fill" class="textfields">
+                <mat-label>Categoria</mat-label>
+                <mat-select #type>
+                    <mat-option *ngFor="let type of typeSelect" [value]="type.typeID">
+                        {{type.description}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="textfields">
+                <mat-label>Color</mat-label>
+                <mat-select #color>
+                    <mat-option *ngFor="let color of colorSelect" [value]="color.colorID">
+                        {{color.description}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="inputsRow">
+            <mat-form-field appearance="fill" class="textfields">
+                <mat-label>Dimesiones</mat-label>
+                <mat-select #size>
+                    <mat-option *ngFor="let size of sizeSelect" [value]="size.sizeID">
+                        {{size.description}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="textfields">
+                <mat-label>Material</mat-label>
+                <mat-select #material>
+                    <mat-option *ngFor="let material of materialSelect" [value]="material.materialID">
+                        {{material.description}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="inputsRow">
+            <mat-form-field appearance="fill" class="textfields">
+                <mat-label>Capacidad</mat-label>
+                <mat-select #capacity>
+                    <mat-option *ngFor="let capacity of capacitySelect" [value]="capacity.capacityID">
+                        {{capacity.description}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div class="buttons">
+        <button type="button" class="btn btn-light" (click)="newModel(type.value, color.value, size.value, material.value, capacity.value)">Aceptar</button>
+        <button type="button" class="btn btn-outline-danger" (click)="close()">Cancelar</button>
+    </div>
+</body>
+
+</html>

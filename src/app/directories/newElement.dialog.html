@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 mat-dialog-title class="header">{{this.directory}}</h1>
+    <div mat-dialog-content>
+        <div class="inputsRow">
+            <mat-form-field appearance="fill" class="textfield">
+                <mat-label>Descripcion</mat-label>
+                <input matInput #description value="">
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div class="buttons">
+        <button type="button" class="btn btn-light" (click)="addElement(description.value)">Aceptar</button>
+        <button type="button" class="btn btn-outline-danger" (click)="close()">Cancelar</button>
+    </div>
+</body>
+
+</html>
